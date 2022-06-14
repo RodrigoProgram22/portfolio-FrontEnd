@@ -1,0 +1,417 @@
+:root {
+  --primary: #30c4c9;
+  --secondary: #130e0e;
+}
+a {
+  text-decoration: none;
+}
+.fuenteG {
+  font-family: "Signika Negative", sans-serif;
+}
+/* nav */
+button {
+  width: 130px;
+  height: 50px;
+  padding: 1px;
+  border: 2px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--primary);
+  border-radius: 12px;
+}
+button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--primary);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
+}
+.img-AP {
+  width: 120px;
+  height: 50px;
+  object-fit: contain;
+}
+.img-red {
+  width: 50px;
+  height: 30px;
+  object-fit: contain;
+}
+/* header */
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 22px;
+}
+.img-rodri {
+  width: 190px;
+  border-radius: 50%;
+  border: 4px solid var(--primary);
+  object-fit: contain;
+}
+.container-title {
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+/* section experiencia */
+.tittle-section {
+  width: 190px;
+  border-radius: 9px;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+
+.img-estrella img {
+  width: 100px;
+  object-fit: contain;
+}
+hr {
+  color: var(--primary);
+  border-radius: 8px;
+}
+/* section habilidades */
+/* Barra de progreso */
+.progress {
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+}
+.progress1 {
+  background: none;
+  margin: 0 auto;
+  box-shadow: none;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  position: relative;
+}
+.progress:after {
+  content: "";
+  border-radius: 50%;
+  border: 15px solid #f2f5f5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.progress1:after {
+  content: "";
+  border-radius: 50%;
+  border: 15px solid #f2f5f5;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.progress > span {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+.progress .progress-left {
+  left: 0;
+}
+.progress .progress-bar {
+  border-width: 15px;
+  border-style: solid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  top: 0;
+}
+.progress .progress-left .progress-bar {
+  left: 100%;
+  border-top-right-radius: 80px;
+  border-bottom-right-radius: 80px;
+  border-left: 0;
+  -webkit-transform-origin: center left;
+  transform-origin: center left;
+}
+.progress .progress-right {
+  right: 0;
+}
+.progress .progress-right .progress-bar {
+  left: -100%;
+  -webkit-transform-origin: center right;
+  transform-origin: center right;
+  border-top-left-radius: 80px;
+  border-bottom-left-radius: 80px;
+  border-right: 0;
+}
+.progress .progress-value {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.progress.html .progress-bar {
+  border-color: #e44d25;
+}
+.progress.html .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.html .progress-left .progress-bar {
+  animation: loading-2 1.5s linear forwards 1.8s;
+}
+.progress.js .progress-bar {
+  border-color: #f0db4f;
+}
+.progress.js .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.js .progress-left .progress-bar {
+  animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.typescript .progress-bar {
+  border-color: #007acc;
+}
+.progress.typescript .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.typescript .progress-left .progress-bar {
+  animation: loading-6 1s linear forwards 1.8s;
+}
+.progress.angular .progress-bar {
+  border-color: #c3002f;
+}
+.progress.angular .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.angular .progress-left .progress-bar {
+  animation: loading-6 1s linear forwards 1.8s;
+}
+.progress.css .progress-bar {
+  border-color: #379ad6;
+}
+.progress.css .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.css .progress-left .progress-bar {
+  animation: loading-2 1s linear forwards 1.8s;
+}
+.progress.bootstrap .progress-bar {
+  border-color: #7411f6;
+}
+.progress.bootstrap .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.bootstrap .progress-left .progress-bar {
+  animation: loading-2 1s linear forwards 1.8s;
+}
+.progress.git .progress-bar {
+  border-color: #de4c36;
+}
+.progress.git .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.git .progress-left .progress-bar {
+  animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.github .progress-bar {
+  border-color: #080606;
+}
+.progress.github .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.github .progress-left .progress-bar {
+  animation: loading-3 1s linear forwards 1.8s;
+}
+.progress.java .progress-bar {
+  border-color: #73a1fb;
+}
+.progress.java .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.mysql .progress-bar {
+  border-color: #005e88;
+}
+.progress.mysql .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+.progress.photoshop .progress-bar {
+  border-color: #001e36;
+}
+.progress.photoshop .progress-right .progress-bar {
+  animation: loading-3 1.8s linear forwards;
+}
+.progress.figma .progress-bar {
+  border-color: #2d3038;
+}
+.progress.figma .progress-right .progress-bar {
+  animation: loading-1 1.8s linear forwards;
+}
+@keyframes loading-1 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+@keyframes loading-2 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg);
+  }
+}
+@keyframes loading-3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+}
+@keyframes loading-4 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(36deg);
+    transform: rotate(36deg);
+  }
+}
+@keyframes loading-5 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(126deg);
+    transform: rotate(126deg);
+  }
+}
+@keyframes loading-6 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+}
+/* seccion proyectos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contenedor0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenedor {
+  position: relative;
+  width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.contenedor .tarjeta {
+  position: relative;
+  max-width: 300px;
+  height: 185px;
+  background-color: #fff;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 20px #30c4c9;
+  transition: 0.3s ease-in-out;
+  border-radius: 15px;
+}
+.contenedor .tarjeta:hover {
+  height: 300px;
+}
+
+.contenedor .tarjeta .image {
+  cursor: pointer;
+  position: relative;
+  width: 260px;
+  height: 260px;
+  background-color: #fff;
+  border-radius: 15px;
+  top: -40%;
+  left: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.contenedor .tarjeta .image img {
+  max-width: 100%;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+.contenedor .tarjeta .divTexto {
+  position: relative;
+  top: -140px;
+  padding: 10px 15px;
+  color: #111;
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+.contenedor .tarjeta:hover .divTexto {
+  margin-top: 30px;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+/* footer */
+.img-redS {
+  width: 34px;
+  object-fit: contain;
+}
+.redS {
+  width: 320px;
+}
+.text-primario {
+  color: var(--primary);
+}

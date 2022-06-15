@@ -1,0 +1,10 @@
+.img-redS {
+  width: 34px;
+  object-fit: contain;
+}
+.redS {
+  width: 320px;
+}
+.text-primario {
+  color: var(--primary);
+}

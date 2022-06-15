@@ -1,0 +1,64 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary: #30c4c9;
+  --secondary: #130e0e;
+}
+a {
+  text-decoration: none;
+}
+.fuenteG {
+  font-family: "Signika Negative", sans-serif;
+}
+hr {
+  color: var(--primary);
+  border-radius: 8px;
+}
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 22px;
+}
+.tittle-section {
+  width: 190px;
+  border-radius: 9px;
+  background-color: var(--primary);
+  color: var(--secondary);
+}
+button {
+  width: 130px;
+  height: 50px;
+  padding: 1px;
+  border: 2px solid var(--primary);
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: 0.3s;
+  z-index: 1;
+  font-family: inherit;
+  color: var(--primary);
+  border-radius: 12px;
+}
+button::before {
+  content: "";
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: var(--primary);
+  transition: 0.5s ease;
+  display: block;
+  z-index: -1;
+}
+button:hover::before {
+  width: 105%;
+}
+
+button:hover {
+  color: #111;
+}

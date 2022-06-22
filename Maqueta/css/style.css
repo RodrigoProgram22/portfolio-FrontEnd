@@ -47,6 +47,11 @@ button:hover {
   color: #111;
 }
 .img-AP {
+  width: 80px;
+  height: 50px;
+  object-fit: contain;
+}
+.img-Inti {
   width: 120px;
   height: 50px;
   object-fit: contain;
@@ -353,7 +358,7 @@ hr {
 
 .contenedor .tarjeta {
   position: relative;
-  max-width: 300px;
+  width: 305px;
   height: 185px;
   background-color: #fff;
   margin: 30px 10px;

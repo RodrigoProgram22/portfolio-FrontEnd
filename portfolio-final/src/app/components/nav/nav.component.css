@@ -1,4 +1,9 @@
 .img-AP {
+  width: 80px;
+  height: 50px;
+  object-fit: contain;
+}
+.img-Inti {
   width: 120px;
   height: 50px;
   object-fit: contain;

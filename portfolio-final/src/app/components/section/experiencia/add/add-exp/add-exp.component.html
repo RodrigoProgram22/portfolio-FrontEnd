@@ -1,0 +1,76 @@
+<section class="container mx-auto my-4">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col align-self-center">
+      <div class="container-fluid bg-primario p-2">
+        <h1 class="text-center my-4 fw-bold fuenteG">
+          Añadir nueva experiencia
+        </h1>
+        <form
+          class="container mx-auto my-4"
+          [formGroup]="form"
+          (submit)="addExp()"
+        >
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col form__group field mx-auto mb-2">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="empresa"
+                [(ngModel)]="addEmpresa"
+              />
+              <label class="form__label fuenteG fw-bold" for="name">
+                Empresa
+              </label>
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="cargo"
+                [(ngModel)]="addCargo"
+              />
+              <label class="form__label fuenteG fw-bold" for="text"
+                >Cargo</label
+              >
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="periodo"
+                [(ngModel)]="addPeriodo"
+              />
+              <label class="form__label fuenteG fw-bold" for="text"
+                >Periodo</label
+              >
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="descrip"
+                [(ngModel)]="addDescrip"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Breve Descripcion
+              </label>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <p *ngIf="form.invalid" class="text-danger fw-bold">
+              Rellena los campos correctamente
+            </p>
+            <button class="mt-2 enviar fuenteG fw-bold" *ngIf="form.valid">
+              Añadir
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col align-self-center">
+      <img src="../../../assets/img/programing2.gif" class="img-fluid" />
+    </div>
+  </div>
+</section>

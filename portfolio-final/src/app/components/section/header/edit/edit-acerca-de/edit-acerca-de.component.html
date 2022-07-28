@@ -1,0 +1,77 @@
+<section class="container mx-auto my-4">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col align-self-center">
+      <div class="container-fluid bg-primario p-2" *ngIf="acerca_de">
+        <h1 class="text-center my-4 fw-bold fuenteG">Editar Acerca de</h1>
+        <form
+          class="container mx-auto my-4"
+          [formGroup]="form"
+          (submit)="editarAcercaDe()"
+        >
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col form__group field mx-auto mb-2">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="nombre"
+                [(ngModel)]="acerca_de.nombre_apellido"
+              />
+              <label class="form__label fuenteG fw-bold" for="name">
+                Nombre y apellido
+              </label>
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="titulo"
+                [(ngModel)]="acerca_de.titulo"
+              />
+              <label class="form__label fuenteG fw-bold" for="text"
+                >Titulo</label
+              >
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="email"
+                formControlName="email"
+                [(ngModel)]="acerca_de.email"
+              />
+              <label class="form__label fuenteG fw-bold" for="email"
+                >Email</label
+              >
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="descrip"
+                [(ngModel)]="acerca_de.descripcion"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Breve Descripcion
+              </label>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <p *ngIf="form.invalid" class="text-danger fw-bold">
+              Rellena los campos correctamente
+            </p>
+            <button
+              class="mt-2 enviar fuenteG fw-bold"
+              [disabled]="form.invalid"
+            >
+              Editar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col align-self-center">
+      <img src="../../../assets/img/programing2.gif" class="img-fluid" />
+    </div>
+  </div>
+</section>

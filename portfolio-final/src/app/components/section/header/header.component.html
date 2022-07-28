@@ -1,22 +1,39 @@
 <header class="container my-5" id="inicio">
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col text-md-end text-center align-self-center">
-      <img src="../../../assets/img/rodrigo.jpg" class="img-rodri img-fluid" />
+      <div class="position-relative">
+        <img
+          src="../../../assets/img/rodrigo.jpg"
+          class="img-rodri img-fluid"
+        />
+      </div>
     </div>
     <div class="col align-self-center">
-      <div class="container-title text-center p-3 fuenteG fw-bold">
-        <h1>Rodrigo Rodrigo</h1>
-        <h2>Desarrollador Web Full Stack Jr</h2>
+      <div class="position-relative">
+        <div class="container-title text-center p-3 fuenteG fw-bold">
+          <h1>{{ acerca_de.nombre_apellido }}</h1>
+          <h2>{{ acerca_de.titulo }}</h2>
+        </div>
       </div>
-      <div class="mt-4">
+      <div class="mt-4 p-3">
         <p class="fw-bold">
-          Mi nombre es Ezequiel Rodrigo Romano, tengo 21 años y soy Programador
-          Web Full Stack Jr y Tecnico Superior en Computacion y Redes.
+          {{ acerca_de.descripcion }}
         </p>
+        <div *ngIf="login" class="text-center">
+          <button
+            type="button"
+            class="btn btn-info"
+            routerLink="/editAcerca_de/{{ acerca_de.id_acerca_de }}"
+          >
+            <i class="bi bi-pencil-square text-light"></i>
+          </button>
+        </div>
       </div>
     </div>
     <div class="col align-self-center">
-      <img src="../../../assets/img/programing2.gif" class="img-fluid" />
+      <div class="position-relative">
+        <img src="../../../assets/img/programing1.gif" class="img-fluid" />
+      </div>
     </div>
   </div>
 </header>

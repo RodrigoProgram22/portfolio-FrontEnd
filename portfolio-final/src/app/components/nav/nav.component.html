@@ -45,11 +45,13 @@
         </li>
       </ul>
     </div>
-    <a routerLink="/login" (click)="boleanoBtn()" *ngIf="btnIni">
-      <button class="mt-2 fuenteG" type="submit">Iniciar Sesión</button>
+    <a routerLink="/login" routerLinkActive="active" *ngIf="btnIni">
+      <button class="mt-2 fuenteG button-primary" type="submit">
+        Iniciar Sesión
+      </button>
     </a>
-    <a routerLink="/inicio" (click)="boleanoBtn1()" *ngIf="btnVolver">
-      <button class="mt-2 fuenteG" type="submit">Volver</button>
+    <a routerLink="/inicio" routerLinkActive="active" *ngIf="btnVolver">
+      <button class="mt-2 fuenteG button-primary" type="submit">Volver</button>
     </a>
   </div>
 </nav>

@@ -25,7 +25,7 @@ h2 {
   background-color: var(--primary);
   color: var(--secondary);
 }
-button {
+.button-primary {
   width: 130px;
   height: 50px;
   padding: 1px;
@@ -42,7 +42,7 @@ button {
   color: var(--primary);
   border-radius: 12px;
 }
-button::before {
+.button-primary::before {
   content: "";
   width: 0;
   height: 300%;
@@ -55,10 +55,10 @@ button::before {
   display: block;
   z-index: -1;
 }
-button:hover::before {
+.button-primary:hover::before {
   width: 105%;
 }
 
-button:hover {
+.button-primary:hover {
   color: #111;
 }

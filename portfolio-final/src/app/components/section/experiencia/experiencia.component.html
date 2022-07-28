@@ -3,33 +3,47 @@
     <h2 class="tittle-section p-3 mx-auto my-3 fuenteG fw-bold text-center">
       Experiencia
     </h2>
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col col-md-4 img-estrella text-md-end text-center">
-        <a href="https://www.facebook.com/compu.shop.3/" target="_blank">
-          <img src="../../../assets/img/xp/compusho.jpg" />
-        </a>
+
+    <div *ngFor="let expeFor of expers">
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div
+          class="col col-md-4 img-estrella text-md-end text-center align-self-center"
+        >
+          <a href="https://www.facebook.com/compu.shop.3/" target="_blank">
+            <img src="../../../../assets/img/xp/iconprogramador.png" />
+          </a>
+        </div>
+        <div class="col col-md-6">
+          <div *ngIf="login" class="text-md-end text-center">
+            <button
+              type="button"
+              class="btn btn-info mx-1"
+              routerLink="/editExpe/{{ expeFor.id_exp }}"
+            >
+              <i class="bi bi-pencil-square text-light"></i>
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger mx-1"
+              (click)="borrarExperiencia(expeFor.id_exp)"
+            >
+              <i class="bi bi-x-square"></i>
+            </button>
+          </div>
+          <div class="text-md-start text-center fw-bold">
+            <p>Empresa : {{ expeFor.empresa }}</p>
+            <p>Cargo : {{ expeFor.cargo }}</p>
+            <p>Periodo : {{ expeFor.periodo }}</p>
+            <p>Descripcion: {{ expeFor.descripcion }}</p>
+          </div>
+        </div>
       </div>
-      <div class="col col-md-6">
-        <p class="text-md-start text-center fw-bold">
-          Cuento con experiencia de 1 año en el area de Tecnico y Reparacion de
-          Computadoras, Notebook e Impresoras. En un local de mi ciudad, llamado
-          Compushop.
-        </p>
-      </div>
+      <hr class="mx-auto md-5" size="7" />
     </div>
-    <hr class="mx-md-5" size="7" />
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-      <div class="col col-md-4 img-estrella text-md-end text-center">
-        <a href="https://www.linkedin.com/in/rodrigo-romano22/" target="_blank">
-          <img src="../../../assets/img/xp/iconprogramador.png" />
-        </a>
-      </div>
-      <div class="col col-md-6">
-        <p class="text-md-start text-center fw-bold">
-          Tambien cuento con experiencia realizando varios proyectos en el area
-          de Front-End Developer.
-        </p>
-      </div>
+    <div *ngIf="login" class="text-center">
+      <button type="button" class="btn btn-success mx-1" routerLink="/addExpe">
+        <i class="bi bi-plus-circle"></i>
+      </button>
     </div>
   </div>
 </section>

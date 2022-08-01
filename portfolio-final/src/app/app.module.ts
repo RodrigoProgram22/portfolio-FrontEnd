@@ -17,6 +17,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { AddExpComponent } from './components/section/experiencia/add/add-exp/add-exp.component';
 import { EditExpComponent } from './components/section/experiencia/edit/edit-exp/edit-exp.component';
 import { EditAcercaDeComponent } from './components/section/header/edit/edit-acerca-de/edit-acerca-de.component';
+import { EditEduComponent } from './components/section/educacion/edit/edit-edu/edit-edu.component';
+import { AddEduComponent } from './components/section/educacion/add/add-edu/add-edu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +34,8 @@ import { EditAcercaDeComponent } from './components/section/header/edit/edit-ace
     AddExpComponent,
     EditExpComponent,
     EditAcercaDeComponent,
+    EditEduComponent,
+    AddEduComponent,
   ],
   imports: [
     BrowserModule,

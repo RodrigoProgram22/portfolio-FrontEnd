@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Experiencia } from 'src/app/model/ExperienciaM';
-import { ExperienciaService } from 'src/app/service/experiencia.service';
+import { Educacion } from 'src/app/model/EducacionM';
+import { EducacionService } from 'src/app/service/educacion.service';
 
 @Component({
-  selector: 'app-edit-exp',
-  templateUrl: './edit-exp.component.html',
-  styleUrls: ['./edit-exp.component.css'],
+  selector: 'app-edit-edu',
+  templateUrl: './edit-edu.component.html',
+  styleUrls: ['./edit-edu.component.css'],
 })
-export class EditExpComponent implements OnInit {
-  expe: Experiencia = null;
+export class EditEduComponent implements OnInit {
+  edu: Educacion = null;
   public form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private ExpeS: ExperienciaService,
+    private EduS: EducacionService,
     private activateRouter: ActivatedRoute,
     private router: Router
   ) {
     //Creamos el grupo de controles para el formulario
     this.form = this.formBuilder.group({
-      empresa: [
+      nombre: [
         '',
         [
           Validators.required,
@@ -29,7 +29,7 @@ export class EditExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      cargo: [
+      titulo: [
         '',
         [
           Validators.required,
@@ -37,7 +37,7 @@ export class EditExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      periodo: [
+      fecha: [
         '',
         [
           Validators.required,
@@ -53,44 +53,34 @@ export class EditExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      descrip: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(70),
-        ],
-      ],
     });
   }
   ngOnInit(): void {
     const id = this.activateRouter.snapshot.params['id'];
-    this.ExpeS.buscarExp(id).subscribe(
+    this.EduS.buscardu(id).subscribe(
       (data) => {
-        this.expe = data;
+        this.edu = data;
       },
       (err) => {
-        alert('Error al modificar experiencia');
+        alert('Error al modificar educacion');
         this.router.navigate(['']);
       }
     );
   }
-
-  editExp(): void {
+  editEdu(): void {
     const id = this.activateRouter.snapshot.params['id'];
-    this.ExpeS.editExpe(
+    this.EduS.editEdu(
       id,
-      this.expe.empresa,
-      this.expe.cargo,
-      this.expe.periodo,
-      this.expe.enlace,
-      this.expe.descripcion
+      this.edu.nombre_inst,
+      this.edu.titulo,
+      this.edu.fecha,
+      this.edu.enlace
     ).subscribe(
       (data) => {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al modificar experiencia');
+        alert('Error al modificar educacion');
         this.router.navigate(['']);
       }
     );

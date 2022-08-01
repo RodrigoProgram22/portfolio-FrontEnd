@@ -1,34 +1,36 @@
 <section class="container mx-auto my-4 animacion fadeIn">
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col align-self-center">
-      <div class="container-fluid bg-primario p-2" *ngIf="expe">
-        <h1 class="text-center my-4 fw-bold fuenteG">Editar experiencia</h1>
+      <div class="container-fluid bg-primario p-2">
+        <h1 class="text-center my-4 fw-bold fuenteG">
+          Añadir nueva experiencia
+        </h1>
         <form
           class="container mx-auto my-4"
           [formGroup]="form"
-          (submit)="editExp()"
+          (submit)="addEdu()"
         >
           <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col form__group field mx-auto mb-2">
               <input
                 class="form__field"
                 type="text"
-                formControlName="empresa"
-                [(ngModel)]="expe.empresa"
+                formControlName="nombre"
+                [(ngModel)]="addNombre"
               />
               <label class="form__label fuenteG fw-bold" for="name">
-                Nombre de la empresa
+                Nombre de la institución
               </label>
             </div>
             <div class="col form__group field mx-auto">
               <input
                 class="form__field"
                 type="text"
-                formControlName="cargo"
-                [(ngModel)]="expe.cargo"
+                formControlName="titulo"
+                [(ngModel)]="addTitulo"
               />
               <label class="form__label fuenteG fw-bold" for="text"
-                >Cargo</label
+                >Titulo</label
               >
             </div>
           </div>
@@ -38,7 +40,7 @@
                 class="form__field"
                 type="text"
                 formControlName="enlace"
-                [(ngModel)]="expe.enlace"
+                [(ngModel)]="addEnlace"
               />
               <label class="form__label fuenteG fw-bold" for="text"
                 >Pagina Web</label
@@ -48,33 +50,21 @@
               <input
                 class="form__field"
                 type="text"
-                formControlName="periodo"
-                [(ngModel)]="expe.periodo"
+                formControlName="fecha"
+                [(ngModel)]="addFecha"
               />
               <label class="form__label fuenteG fw-bold" for="text"
-                >Periodo</label
+                >Fecha</label
               >
             </div>
           </div>
-          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
-            <div class="col form__group field mx-auto">
-              <input
-                class="form__field"
-                type="text"
-                formControlName="descrip"
-                [(ngModel)]="expe.descripcion"
-              />
-              <label class="form__label fuenteG fw-bold" for="text">
-                Breve Descripcion
-              </label>
-            </div>
-          </div>
+
           <div class="text-center mt-5">
             <p *ngIf="form.invalid" class="text-danger fw-bold">
               Rellena los campos correctamente
             </p>
             <button class="mt-2 enviar fuenteG fw-bold" *ngIf="form.valid">
-              Editar
+              Añadir
             </button>
           </div>
         </form>

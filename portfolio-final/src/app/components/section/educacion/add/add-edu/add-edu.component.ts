@@ -1,29 +1,29 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Experiencia } from 'src/app/model/ExperienciaM';
-import { ExperienciaService } from 'src/app/service/experiencia.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Educacion } from 'src/app/model/EducacionM';
+import { EducacionService } from 'src/app/service/educacion.service';
+
 @Component({
-  selector: 'app-add-exp',
-  templateUrl: './add-exp.component.html',
-  styleUrls: ['./add-exp.component.css'],
+  selector: 'app-add-edu',
+  templateUrl: './add-edu.component.html',
+  styleUrls: ['./add-edu.component.css'],
 })
-export class AddExpComponent implements OnInit {
-  addEmpresa: String = '';
-  addCargo: String = '';
-  addPeriodo: String = '';
+export class AddEduComponent implements OnInit {
+  addNombre: String = '';
+  addTitulo: String = '';
+  addFecha: String = '';
   addEnlace: String = '';
-  addDescrip: String = '';
   public form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private ExpeS: ExperienciaService,
+    private EduS: EducacionService,
     private router: Router
   ) {
     //Creamos el grupo de controles para el formulario
     this.form = this.formBuilder.group({
-      empresa: [
+      nombre: [
         '',
         [
           Validators.required,
@@ -31,7 +31,7 @@ export class AddExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      cargo: [
+      titulo: [
         '',
         [
           Validators.required,
@@ -39,7 +39,7 @@ export class AddExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      periodo: [
+      fecha: [
         '',
         [
           Validators.required,
@@ -55,32 +55,23 @@ export class AddExpComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      descrip: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(70),
-        ],
-      ],
     });
   }
   ngOnInit(): void {}
-  addExp(): void {
-    const nuevaExpe = new Experiencia(
-      this.addEmpresa,
-      this.addCargo,
-      this.addPeriodo,
+  addEdu(): void {
+    const nuevaEdu = new Educacion(
+      this.addNombre,
+      this.addTitulo,
+      this.addFecha,
       this.addEnlace,
-      this.addDescrip,
       'foto'
     );
-    this.ExpeS.addExpe(nuevaExpe).subscribe(
+    this.EduS.addEdu(nuevaEdu).subscribe(
       (data) => {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al agregar experiencia');
+        alert('Error al agregar educacion');
         this.router.navigate(['']);
       }
     );

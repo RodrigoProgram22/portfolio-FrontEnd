@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Educacion } from 'src/app/model/EducacionM';
-import { EducacionService } from 'src/app/service/educacion.service';
+import { Habilidad } from 'src/app/model/HabilidadM';
+import { HabilidadService } from 'src/app/service/habilidad.service';
 
 @Component({
-  selector: 'app-edit-edu',
-  templateUrl: './edit-edu.component.html',
-  styleUrls: ['./edit-edu.component.css'],
+  selector: 'app-edit-hab',
+  templateUrl: './edit-hab.component.html',
+  styleUrls: ['./edit-hab.component.css'],
 })
-export class EditEduComponent implements OnInit {
-  edu: Educacion = null;
+export class EditHabComponent implements OnInit {
+  hab: Habilidad = null;
   public form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private EduS: EducacionService,
+    private HabS: HabilidadService,
     private activateRouter: ActivatedRoute,
     private router: Router
   ) {
@@ -29,22 +29,7 @@ export class EditEduComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      titulo: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
-      fecha: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
+      nivel: [0, [Validators.required]],
       enlace: [
         '',
         [
@@ -65,31 +50,30 @@ export class EditEduComponent implements OnInit {
   }
   ngOnInit(): void {
     const id = this.activateRouter.snapshot.params['id'];
-    this.EduS.buscarEdu(id).subscribe(
+    this.HabS.buscarHab(id).subscribe(
       (data) => {
-        this.edu = data;
+        this.hab = data;
       },
       (err) => {
-        alert('Error al modificar educacion');
+        alert('Error al modificar habilidad.');
         this.router.navigate(['']);
       }
     );
   }
-  editEdu(): void {
+  editHab(): void {
     const id = this.activateRouter.snapshot.params['id'];
-    this.EduS.editEdu(
+    this.HabS.editHab(
       id,
-      this.edu.nombre_inst,
-      this.edu.titulo,
-      this.edu.fecha,
-      this.edu.enlace,
-      this.edu.logo_inst
+      this.hab.nombre_hab,
+      this.hab.nivel_hab,
+      this.hab.enlace,
+      this.hab.logo_hab
     ).subscribe(
       (data) => {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al modificar educacion');
+        alert('Error al modificar habilidad');
         this.router.navigate(['']);
       }
     );

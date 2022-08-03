@@ -50,7 +50,15 @@ export class EditExpComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(3),
-          Validators.maxLength(50),
+          Validators.maxLength(250),
+        ],
+      ],
+      img: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(500),
         ],
       ],
       descrip: [
@@ -84,6 +92,7 @@ export class EditExpComponent implements OnInit {
       this.expe.cargo,
       this.expe.periodo,
       this.expe.enlace,
+      this.expe.logo_empresa,
       this.expe.descripcion
     ).subscribe(
       (data) => {

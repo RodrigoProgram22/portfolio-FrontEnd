@@ -14,8 +14,8 @@ export class AddExpComponent implements OnInit {
   addPeriodo: String = '';
   addEnlace: String = '';
   addDescrip: String = '';
+  addLogo_empresa: String = '';
   public form: FormGroup;
-
   constructor(
     private formBuilder: FormBuilder,
     private ExpeS: ExperienciaService,
@@ -52,7 +52,15 @@ export class AddExpComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(3),
-          Validators.maxLength(50),
+          Validators.maxLength(250),
+        ],
+      ],
+      img: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(3),
+          Validators.maxLength(250),
         ],
       ],
       descrip: [
@@ -73,7 +81,7 @@ export class AddExpComponent implements OnInit {
       this.addPeriodo,
       this.addEnlace,
       this.addDescrip,
-      'foto'
+      this.addLogo_empresa
     );
     this.ExpeS.addExpe(nuevaExpe).subscribe(
       (data) => {

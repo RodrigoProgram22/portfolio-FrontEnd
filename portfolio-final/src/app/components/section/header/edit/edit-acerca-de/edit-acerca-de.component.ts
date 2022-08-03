@@ -38,6 +38,14 @@ export class EditAcercaDeComponent implements OnInit {
         ],
       ],
       email: ['', [Validators.required, Validators.email]],
+      img: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(5),
+          Validators.maxLength(250),
+        ],
+      ],
       descrip: [
         '',
         [
@@ -69,6 +77,7 @@ export class EditAcercaDeComponent implements OnInit {
         this.acerca_de.nombre_apellido,
         this.acerca_de.titulo,
         this.acerca_de.email,
+        this.acerca_de.img_perfil,
         this.acerca_de.descripcion
       )
       .subscribe(

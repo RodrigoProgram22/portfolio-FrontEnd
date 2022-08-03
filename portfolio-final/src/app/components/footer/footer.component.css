@@ -8,3 +8,6 @@
 .text-primario {
   color: var(--primary);
 }
+i {
+  font-size: 32px;
+}

@@ -19,6 +19,8 @@ import { EditExpComponent } from './components/section/experiencia/edit/edit-exp
 import { EditAcercaDeComponent } from './components/section/header/edit/edit-acerca-de/edit-acerca-de.component';
 import { EditEduComponent } from './components/section/educacion/edit/edit-edu/edit-edu.component';
 import { AddEduComponent } from './components/section/educacion/add/add-edu/add-edu.component';
+import { AddHabComponent } from './components/section/habilidades/add/add-hab/add-hab.component';
+import { EditHabComponent } from './components/section/habilidades/edit/edit-hab/edit-hab.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import { AddEduComponent } from './components/section/educacion/add/add-edu/add-
     EditAcercaDeComponent,
     EditEduComponent,
     AddEduComponent,
+    AddHabComponent,
+    EditHabComponent,
   ],
   imports: [
     BrowserModule,

@@ -19,11 +19,12 @@ export class AcercaDeService {
     nombre: String,
     titulo: String,
     email: String,
+    img: String,
     descrip: String
   ): Observable<Acerca_de> {
     return this.http.put<Acerca_de>(
       this.URL +
-        `editar/${id}?nombre_apellido=${nombre}&titulo=${titulo}&email=${email}&descripcion=${descrip}&img_perfil=foto_mia`,
+        `editar/${id}?nombre_apellido=${nombre}&titulo=${titulo}&email=${email}&descripcion=${descrip}&img_perfil=${img}`,
       Acerca_de
     );
   }

@@ -1,8 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
 :root {
   --primary: #30c4c9;
   --secondary: #130e0e;
 }
+/* body {
+  background-color: var(--secondary);
+  color: white;
+} */
 a {
   text-decoration: none;
 }

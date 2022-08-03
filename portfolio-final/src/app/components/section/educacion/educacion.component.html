@@ -9,30 +9,30 @@
           class="col col-md-4 img-estrella text-md-end text-center align-self-center"
         >
           <a href="{{ eduFor.enlace }}" target="_blank">
-            <img src="../../../../assets/img/xp/iconprogramador.png" />
+            <img src="{{ eduFor.logo_inst }}" />
           </a>
         </div>
         <div class="col col-md-6">
           <div *ngIf="login" class="text-md-end text-center">
             <button
               type="button"
-              class="btn btn-info mx-1"
+              class="btn btn-warning mx-1"
               routerLink="/editEdu/{{ eduFor.id_edu }}"
             >
-              <i class="bi bi-pencil-square text-light"></i>
+              <i class="bi bi-pen text-light"></i>
             </button>
             <button
               type="button"
               class="btn btn-danger mx-1"
               (click)="borrarEducacion(eduFor.id_edu)"
             >
-              <i class="bi bi-x-square"></i>
+              <i class="bi bi-trash3"></i>
             </button>
           </div>
-          <div class="text-md-start text-center fw-bold">
-            <p>Nombre de la Institución : {{ eduFor.nombre_inst }}</p>
-            <p>Titulo : {{ eduFor.titulo }}</p>
-            <p>Fecha : {{ eduFor.fecha }}</p>
+          <div class="text-md-start text-center">
+            <p><b>Institución :</b> {{ eduFor.nombre_inst }}</p>
+            <p><b>Titulo :</b> {{ eduFor.titulo }}</p>
+            <p><b>Fecha :</b> {{ eduFor.fecha }}</p>
           </div>
         </div>
       </div>

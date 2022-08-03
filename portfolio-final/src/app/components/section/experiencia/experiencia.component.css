@@ -2,3 +2,6 @@
   width: 100px;
   object-fit: contain;
 }
+button {
+  border-radius: 40%;
+}

@@ -1,25 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Educacion } from 'src/app/model/EducacionM';
-import { EducacionService } from 'src/app/service/educacion.service';
+import { Habilidad } from 'src/app/model/HabilidadM';
+import { HabilidadService } from 'src/app/service/habilidad.service';
 
 @Component({
-  selector: 'app-add-edu',
-  templateUrl: './add-edu.component.html',
-  styleUrls: ['./add-edu.component.css'],
+  selector: 'app-add-hab',
+  templateUrl: './add-hab.component.html',
+  styleUrls: ['./add-hab.component.css'],
 })
-export class AddEduComponent implements OnInit {
+export class AddHabComponent implements OnInit {
   addNombre: String = '';
-  addTitulo: String = '';
-  addFecha: String = '';
+  addNivel: number = 1;
   addEnlace: String = '';
-  addLogo_inst: String = '';
+  addLogo_hab: String = '';
   public form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
-    private EduS: EducacionService,
+    private HabS: HabilidadService,
     private router: Router
   ) {
     //Creamos el grupo de controles para el formulario
@@ -32,16 +31,8 @@ export class AddEduComponent implements OnInit {
           Validators.maxLength(50),
         ],
       ],
-      titulo: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(3),
-          Validators.maxLength(50),
-        ],
-      ],
-      fecha: [
-        '',
+      nivel: [
+        0,
         [
           Validators.required,
           Validators.minLength(3),
@@ -67,20 +58,19 @@ export class AddEduComponent implements OnInit {
     });
   }
   ngOnInit(): void {}
-  addEdu(): void {
-    const nuevaEdu = new Educacion(
+  addHab(): void {
+    const nuevaHab = new Habilidad(
       this.addNombre,
-      this.addTitulo,
-      this.addFecha,
+      this.addNivel,
       this.addEnlace,
-      this.addLogo_inst
+      this.addLogo_hab
     );
-    this.EduS.addEdu(nuevaEdu).subscribe(
+    this.HabS.addHab(nuevaHab).subscribe(
       (data) => {
         this.router.navigate(['']);
       },
       (err) => {
-        alert('Error al agregar educacion');
+        alert('Error al agregar habilidad.');
         this.router.navigate(['']);
       }
     );

@@ -2,13 +2,11 @@
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col align-self-center">
       <div class="container-fluid bg-primario p-2">
-        <h1 class="text-center my-4 fw-bold fuenteG">
-          Añadir nueva experiencia
-        </h1>
+        <h1 class="text-center my-4 fw-bold fuenteG">Añadir nueva habilidad</h1>
         <form
           class="container mx-auto my-4"
           [formGroup]="form"
-          (submit)="addEdu()"
+          (submit)="addHab()"
         >
           <div class="row row-cols-1 row-cols-md-2 g-4">
             <div class="col form__group field mx-auto mb-2">
@@ -25,13 +23,15 @@
             <div class="col form__group field mx-auto">
               <input
                 class="form__field"
-                type="text"
-                formControlName="titulo"
-                [(ngModel)]="addTitulo"
+                type="number"
+                min="1"
+                max="100"
+                formControlName="nivel"
+                [(ngModel)]="addNivel"
               />
-              <label class="form__label fuenteG fw-bold" for="text"
-                >Titulo</label
-              >
+              <label class="form__label fuenteG fw-bold" for="text">
+                Nivel
+              </label>
             </div>
           </div>
           <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
@@ -42,33 +42,20 @@
                 formControlName="enlace"
                 [(ngModel)]="addEnlace"
               />
-              <label class="form__label fuenteG fw-bold" for="text"
-                >Pagina Web</label
-              >
+              <label class="form__label fuenteG fw-bold" for="text">
+                Pagina Web
+              </label>
             </div>
-            <div class="col form__group field mx-auto">
-              <input
-                class="form__field"
-                type="text"
-                formControlName="fecha"
-                [(ngModel)]="addFecha"
-              />
-              <label class="form__label fuenteG fw-bold" for="text"
-                >Fecha</label
-              >
-            </div>
-          </div>
-          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
             <div class="col form__group field mx-auto">
               <input
                 class="form__field"
                 type="text"
                 formControlName="img"
-                [(ngModel)]="addLogo_inst"
+                [(ngModel)]="addLogo_hab"
               />
-              <label class="form__label fuenteG fw-bold" for="text"
-                >Imagen URL</label
-              >
+              <label class="form__label fuenteG fw-bold" for="text">
+                Imagen URL
+              </label>
             </div>
           </div>
           <div class="text-center mt-5">

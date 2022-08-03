@@ -5,6 +5,8 @@ import { AddEduComponent } from './components/section/educacion/add/add-edu/add-
 import { EditEduComponent } from './components/section/educacion/edit/edit-edu/edit-edu.component';
 import { AddExpComponent } from './components/section/experiencia/add/add-exp/add-exp.component';
 import { EditExpComponent } from './components/section/experiencia/edit/edit-exp/edit-exp.component';
+import { AddHabComponent } from './components/section/habilidades/add/add-hab/add-hab.component';
+import { EditHabComponent } from './components/section/habilidades/edit/edit-hab/edit-hab.component';
 import { EditAcercaDeComponent } from './components/section/header/edit/edit-acerca-de/edit-acerca-de.component';
 import { HomeComponent } from './components/section/home/home.component';
 
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'editExpe/:id', component: EditExpComponent },
   { path: 'addEdu', component: AddEduComponent },
   { path: 'editEdu/:id', component: EditEduComponent },
+  { path: 'addHab', component: AddHabComponent },
+  { path: 'editHab/:id', component: EditHabComponent },
 ];
 
 @NgModule({

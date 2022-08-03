@@ -48,6 +48,19 @@
               <input
                 class="form__field"
                 type="text"
+                formControlName="img"
+                [(ngModel)]="acerca_de.img_perfil"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Imagen URL
+              </label>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
                 formControlName="descrip"
                 [(ngModel)]="acerca_de.descripcion"
               />
@@ -71,7 +84,7 @@
       </div>
     </div>
     <div class="col align-self-center">
-      <img src="../../../assets/img/programing2.gif" class="img-fluid" />
+      <img src="../../../assets/img/programing1.gif" class="img-fluid" />
     </div>
   </div>
 </section>

@@ -2,10 +2,7 @@
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div class="col text-md-end text-center align-self-center">
       <div class="position-relative">
-        <img
-          src="../../../assets/img/rodrigo.jpg"
-          class="img-rodri img-fluid"
-        />
+        <img src="{{ acerca_de.img_perfil }}" class="img-rodri img-fluid" />
       </div>
     </div>
     <div class="col align-self-center">
@@ -22,10 +19,10 @@
         <div *ngIf="login" class="text-center">
           <button
             type="button"
-            class="btn btn-info"
+            class="btn btn-warning"
             routerLink="/editAcerca_de/{{ acerca_de.id_acerca_de }}"
           >
-            <i class="bi bi-pencil-square text-light"></i>
+            <i class="bi bi-pen text-light"></i>
           </button>
         </div>
       </div>

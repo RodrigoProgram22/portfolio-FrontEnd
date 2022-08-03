@@ -3,329 +3,60 @@
     Habilidades
   </h2>
   <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 mt-2 fuenteG">
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="90"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/html.png'"
-          [showImage]="true"
-          [imageHeight]="60"
-          [imageWidth]="60"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
+    <div *ngFor="let habFor of hab">
+      <div class="col text-center">
+        <div class="container">
+          <div class="position-relative">
+            <div
+              *ngIf="login"
+              class="text-md-end text-center position-absolute top-0 end-0"
+            >
+              <button
+                type="button"
+                class="btn btn-warning mx-1"
+                routerLink="/editHab/{{ habFor.id_hab }}"
+              >
+                <i class="bi bi-pen text-light"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger mx-1"
+                (click)="borrarHabilidad(habFor.id_hab)"
+              >
+                <i class="bi bi-trash3"></i>
+              </button>
+            </div>
+          </div>
+          <circle-progress
+            [percent]="habFor.nivel_hab"
+            [radius]="60"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            imageSrc="{{ habFor.logo_hab }}"
+            [showImage]="true"
+            [imageHeight]="50"
+            [imageWidth]="50"
+            [outerStrokeWidth]="13"
+            [innerStrokeWidth]="8"
+            [outerStrokeColor]="'#30c4c9'"
+            [innerStrokeColor]="'#130e0e'"
+            [animation]="true"
+            [animationDuration]="1000"
+          ></circle-progress>
+        </div>
+        <a
+          class="my-2 text-dark fw-bold"
+          href="{{ habFor.enlace }}"
+          target="_blank"
+        >
+          {{ habFor.nombre_hab }} : {{ habFor.nivel_hab }}%
+        </a>
       </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://developer.mozilla.org/es/docs/Web/HTML"
-        target="_blank"
-      >
-        HTML : 90%
-      </a>
     </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="75"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/JavaScript-logo.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://developer.mozilla.org/es/docs/Web/JavaScript"
-        target="_blank"
-      >
-        JavaScript : 75%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="60"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/typescript.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://www.typescriptlang.org/"
-        target="_blank"
-      >
-        TypeScript : 60%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="60"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/angular.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://angular.io/"
-        target="_blank"
-      >
-        Angular : 60%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="90"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/logocss.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://developer.mozilla.org/es/docs/Web/CSS"
-        target="_blank"
-      >
-        CSS : 90%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="90"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/bootstrap-logo.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://getbootstrap.com/docs/5.0/getting-started/introduction/"
-        target="_blank"
-      >
-        Bootstrap : 90%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="75"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/git.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://git-scm.com/"
-        target="_blank"
-      >
-        Git : 75%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="75"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/github.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://github.com/"
-        target="_blank"
-      >
-        GitHub : 75%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="50"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/java.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://www.java.com/es/"
-        target="_blank"
-      >
-        Java : 50%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="50"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/mysql.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://www.mysql.com/"
-        target="_blank"
-      >
-        MySql : 50%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="25"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/logoPhotoshop.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://www.adobe.com/ar/products/photoshop.html"
-        target="_blank"
-      >
-        Photoshop : 25%
-      </a>
-    </div>
-    <div class="col text-center">
-      <div class="container">
-        <circle-progress
-          [percent]="50"
-          [radius]="60"
-          [showUnits]="false"
-          [showSubtitle]="false"
-          [imageSrc]="'../../../assets/img/icons/figma.png'"
-          [showImage]="true"
-          [imageHeight]="50"
-          [imageWidth]="50"
-          [outerStrokeWidth]="13"
-          [innerStrokeWidth]="8"
-          [outerStrokeColor]="'#30c4c9'"
-          [innerStrokeColor]="'#130e0e'"
-          [animation]="true"
-          [animationDuration]="1000"
-        ></circle-progress>
-      </div>
-      <a
-        class="my-2 text-dark fw-bold"
-        href="https://www.figma.com/"
-        target="_blank"
-      >
-        Figma : 50%
-      </a>
+    <div *ngIf="login" class="text-center align-self-center">
+      <button type="button" class="btn btn-success mx-1" routerLink="/addHab">
+        <i class="bi bi-plus-circle"></i>
+      </button>
     </div>
   </div>
 </section>

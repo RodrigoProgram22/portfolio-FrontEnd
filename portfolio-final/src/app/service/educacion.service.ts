@@ -12,7 +12,7 @@ export class EducacionService {
   public mostrarEdu(): Observable<Educacion[]> {
     return this.http.get<Educacion[]>(this.URL + 'mostrar');
   }
-  public buscardu(id: number): Observable<Educacion> {
+  public buscarEdu(id: number): Observable<Educacion> {
     return this.http.get<Educacion>(this.URL + `buscar/${id}`);
   }
   public addEdu(edu: Educacion): Observable<any> {
@@ -23,11 +23,12 @@ export class EducacionService {
     nombre_inst: String,
     titulo: String,
     fecha: String,
-    enlace: String
+    enlace: String,
+    img: String
   ): Observable<Educacion> {
     return this.http.put<Educacion>(
       this.URL +
-        `editar/${id}?nombre=${nombre_inst}&titulo=${titulo}&fecha=${fecha}&enlace=${enlace}&logo_inst=foto_mia`,
+        `editar/${id}?nombre=${nombre_inst}&titulo=${titulo}&fecha=${fecha}&enlace=${enlace}&logo_inst=${img}`,
       Educacion
     );
   }

@@ -4,11 +4,12 @@
   border-radius: 50%;
   border: 4px solid var(--primary);
   object-fit: contain;
+  cursor: default;
 }
 .container-title {
   background-color: var(--primary);
   color: var(--secondary);
 }
 button {
-  border-radius: 40%;
+  border-radius: 15%;
 }

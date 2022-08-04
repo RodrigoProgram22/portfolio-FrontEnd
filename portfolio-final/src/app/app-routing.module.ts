@@ -9,6 +9,8 @@ import { AddHabComponent } from './components/section/habilidades/add/add-hab/ad
 import { EditHabComponent } from './components/section/habilidades/edit/edit-hab/edit-hab.component';
 import { EditAcercaDeComponent } from './components/section/header/edit/edit-acerca-de/edit-acerca-de.component';
 import { HomeComponent } from './components/section/home/home.component';
+import { AddProyecComponent } from './components/section/proyectos/add/add-proyec/add-proyec.component';
+import { EditProyecComponent } from './components/section/proyectos/edit/edit-proyec/edit-proyec.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -21,6 +23,8 @@ const routes: Routes = [
   { path: 'editEdu/:id', component: EditEduComponent },
   { path: 'addHab', component: AddHabComponent },
   { path: 'editHab/:id', component: EditHabComponent },
+  { path: 'addProy', component: AddProyecComponent },
+  { path: 'editProy/:id', component: EditProyecComponent },
 ];
 
 @NgModule({

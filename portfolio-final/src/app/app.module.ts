@@ -21,6 +21,8 @@ import { EditEduComponent } from './components/section/educacion/edit/edit-edu/e
 import { AddEduComponent } from './components/section/educacion/add/add-edu/add-edu.component';
 import { AddHabComponent } from './components/section/habilidades/add/add-hab/add-hab.component';
 import { EditHabComponent } from './components/section/habilidades/edit/edit-hab/edit-hab.component';
+import { AddProyecComponent } from './components/section/proyectos/add/add-proyec/add-proyec.component';
+import { EditProyecComponent } from './components/section/proyectos/edit/edit-proyec/edit-proyec.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +42,8 @@ import { EditHabComponent } from './components/section/habilidades/edit/edit-hab
     AddEduComponent,
     AddHabComponent,
     EditHabComponent,
+    AddProyecComponent,
+    EditProyecComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,90 @@
+<section class="container mx-auto my-4 animacion fadeIn">
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col align-self-center">
+      <div class="container-fluid bg-primario p-2">
+        <h1 class="text-center my-4 fw-bold fuenteG">Añadir nuevo proyecto</h1>
+        <form
+          class="container mx-auto my-4"
+          [formGroup]="form"
+          (submit)="addProyec()"
+        >
+          <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col form__group field mx-auto mb-2">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="titulo"
+                [(ngModel)]="addTitulo"
+              />
+              <label class="form__label fuenteG fw-bold" for="name">
+                Titulo
+              </label>
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="enlace"
+                [(ngModel)]="addEnlace"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Pagina Web
+              </label>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="fecha"
+                [(ngModel)]="addFecha"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Fecha
+              </label>
+            </div>
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="descrip"
+                [(ngModel)]="addDescrip"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Breve Descripción
+              </label>
+            </div>
+          </div>
+          <div class="row row-cols-1 row-cols-md-2 g-4 mt-4">
+            <div class="col form__group field mx-auto">
+              <input
+                class="form__field"
+                type="text"
+                formControlName="img"
+                [(ngModel)]="addImg"
+              />
+              <label class="form__label fuenteG fw-bold" for="text">
+                Imagen URL
+              </label>
+            </div>
+          </div>
+          <div class="text-center mt-5">
+            <p *ngIf="form.invalid" class="text-danger fw-bold">
+              Rellena los campos correctamente
+            </p>
+            <button class="mt-2 enviar fuenteG fw-bold" *ngIf="form.valid">
+              Añadir
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col align-self-center">
+      <img
+        src="https://i.ibb.co/GFCqcn4/programing1-unscreen.gif"
+        class="img-fluid"
+      />
+    </div>
+  </div>
+</section>

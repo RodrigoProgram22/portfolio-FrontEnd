@@ -3,136 +3,54 @@
     Proyectos
   </h2>
   <div class="row row-cols-1 row-cols-md-2 g-4 mx-5 mt-2 fuenteG">
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a href="https://rodrigobar.netlify.app/" target="_blank">
-              <img src="../../../assets/img/proyectos/img-restobar.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>RestoBar</h3>
-            <p>
-              Plantilla de un restaurante o bar. Realizada el 20 de Junio de
-              2022.
-            </p>
-            <a href="https://rodrigobar.netlify.app/" target="_blank">
-              <button class="mt-2 fw-bold button-primary" type="submit">
-                Ir
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a href="https://climaarg.netlify.app/" target="_blank">
-              <img src="../../../assets/img/proyectos/img-clima.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>ClimaArg</h3>
-            <p>Pagina Web del Clima. Realizada el 20 de Diciembre de 2021.</p>
-            <a href="https://climaarg.netlify.app/" target="_blank">
-              <button class="mt-2 fw-bold button-primary" type="submit">
-                Ir
-              </button>
-            </a>
+    <div *ngFor="let proyFor of proyec">
+      <div class="col contenedor0">
+        <div class="contenedor">
+          <div class="tarjeta">
+            <div class="image">
+              <a href="{{ proyFor.enlace }}" target="_blank">
+                <img src="{{ proyFor.img_proyec }}" />
+              </a>
+            </div>
+            <div class="divTexto">
+              <h4>{{ proyFor.titulo }}</h4>
+              <p>Fecha : {{ proyFor.fecha }}</p>
+              <p>{{ proyFor.descripcion }}</p>
+
+              <a href="{{ proyFor.enlace }}" target="_blank">
+                <button class="mt-2 fw-bold button-primary" type="submit">
+                  Ir
+                </button>
+              </a>
+              <div *ngIf="login" class="text-center mt-1">
+                <button
+                  type="button"
+                  class="btn btn-warning mx-1 text-light p-1"
+                  routerLink="/editProy/{{ proyFor.id_proyec }}"
+                >
+                  <i class="bi bi-pen"></i>Editar
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-danger mx-1 text-light p-1"
+                  (click)="borrarProyec(proyFor.id_proyec)"
+                >
+                  <i class="bi bi-trash3"></i>Borrar
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a href="https://migaleriaweb.netlify.app/" target="_blank">
-              <img src="../../../assets/img/proyectos/img-migaleria.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>Mi Galeria Web</h3>
-            <p>Mi galeria de fotos web. Realizada el 20 de Mayo de 2021.</p>
-            <a href="https://migaleriaweb.netlify.app/" target="_blank">
-              <button class="fw-bold button-primary" type="submit">Ir</button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a href="https://rodribar.netlify.app/" target="_blank">
-              <img src="../../../assets/img/proyectos/img-restobar-2.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>RestoBar v2.0</h3>
-            <p>
-              Plantilla mejorada con Angular. Realizada el 20 de Abril de 2022.
-            </p>
-            <a href="https://rodribar.netlify.app/" target="_blank">
-              <button class="mt-2 fw-bold button-primary" type="submit">
-                Ir
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a
-              href="https://veterinariacuki3.netlify.app/index.html"
-              target="_blank"
-            >
-              <img src="../../../assets/img/proyectos/img-veterinaria.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>Veterinaria Cuki</h3>
-            <p>
-              Plantilla de una Veterinaria. Realizada el 20 de Abril de 2022.
-            </p>
-            <a
-              href="https://veterinariacuki3.netlify.app/index.html"
-              target="_blank"
-            >
-              <button class="mt-2 fw-bold button-primary" type="submit">
-                Ir
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col contenedor0">
-      <div class="contenedor">
-        <div class="tarjeta">
-          <div class="image">
-            <a href="#inicio">
-              <img src="../../../assets/img/proyectos/img-portfolio.jpg" />
-            </a>
-          </div>
-          <div class="divTexto">
-            <h3>Portfolio</h3>
-            <p>Mi portfolio web. Realizado el 13 de Junio de 2022.</p>
-            <a href="#inicio">
-              <button class="mt-2 fw-bold button-primary" type="submit">
-                Ir
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
+    <div *ngIf="login" class="text-center align-self-center">
+      <button
+        type="button"
+        class="btn btn-success mx-1 p-2 rounded-circle"
+        routerLink="/addProy"
+      >
+        <i class="bi bi-plus-circle"></i>
+      </button>
     </div>
   </div>
 </section>

@@ -29,13 +29,7 @@ export class ExperienciaService {
   ): Observable<Experiencia> {
     return this.http.put<Experiencia>(
       this.URL +
-        `editar/${id}?
-        empresa=${empresa}
-        &cargo=${cargo}
-        &periodo=${periodo}
-        &enlace=${enlace}
-        &descripcion=${descrip}
-        &logo_empresa=${img}`,
+        `editar/${id}?empresa=${empresa}&cargo=${cargo}&periodo=${periodo}&enlace=${enlace}&descripcion=${descrip}&logo_empresa=${img}`,
       Experiencia
     );
   }

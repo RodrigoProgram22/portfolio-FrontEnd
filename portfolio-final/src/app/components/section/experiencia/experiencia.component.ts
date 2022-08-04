@@ -8,7 +8,7 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  login: boolean = false;
+  login: boolean = true;
 
   public expers: Array<Experiencia> = [];
 

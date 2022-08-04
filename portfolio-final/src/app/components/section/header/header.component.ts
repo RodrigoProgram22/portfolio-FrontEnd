@@ -8,7 +8,7 @@ import { AcercaDeService } from 'src/app/service/acerca-de.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-  login: boolean = false;
+  login: boolean = true;
 
   //Inyectar el constructor el formBuilder
   constructor(public acerServ: AcercaDeService) {}

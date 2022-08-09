@@ -8,7 +8,7 @@ import { HabilidadService } from 'src/app/service/habilidad.service';
   styleUrls: ['./habilidades.component.css'],
 })
 export class HabilidadesComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   public hab: Array<Habilidad> = [];
   constructor(private HabS: HabilidadService) {}
 

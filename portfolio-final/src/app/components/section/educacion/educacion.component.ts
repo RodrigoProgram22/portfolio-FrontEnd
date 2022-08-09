@@ -8,7 +8,7 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./educacion.component.css'],
 })
 export class EducacionComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   public edu: Array<Educacion> = [];
   constructor(private EduS: EducacionService) {}
 

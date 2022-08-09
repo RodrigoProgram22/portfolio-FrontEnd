@@ -8,7 +8,7 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
   styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-  login: boolean = true;
+  login: boolean = false;
   public proyec: Array<ProyectoM> = [];
   constructor(private proyecS: ProyectoService) {}
 

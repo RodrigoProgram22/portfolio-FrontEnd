@@ -1,13 +1,25 @@
 <section class="container mx-auto my-4 animacion fadeIn">
-  <div class="col align-self-center px-5 mx-auto">
+  <div class="align-self-center px-5 mx-auto">
     <div class="container-fluid bg-primario p-2">
-      <h1 class="text-center my-4 fw-bold fuenteG">Iniciar Sesión</h1>
+      <h1 class="text-center my-4 fw-bold fuenteG">Crear Cuenta</h1>
       <form
         class="container mx-auto my-2"
         #f="ngForm"
-        (ngSubmit)="onLogin()"
+        (ngSubmit)="onRegister()"
         novalidate
       >
+        <div class="form__group field mx-auto mb-4">
+          <input
+            placeholder="Name"
+            class="form__field"
+            id="nombre"
+            name="nombre"
+            type="text"
+            [(ngModel)]="nombre"
+            required
+          />
+          <label class="form__label fuenteG fw-bold" for="name">Nombre</label>
+        </div>
         <div class="form__group field mx-auto mb-4">
           <input
             placeholder="Name"
@@ -21,6 +33,18 @@
           <label class="form__label fuenteG fw-bold" for="name"
             >Nombre de usuario</label
           >
+        </div>
+        <div class="form__group field mx-auto mb-4">
+          <input
+            placeholder="Name"
+            class="form__field"
+            id="email"
+            name="email"
+            type="email"
+            [(ngModel)]="email"
+            required
+          />
+          <label class="form__label fuenteG fw-bold" for="name">Email</label>
         </div>
         <div class="form__group field mx-auto">
           <input
@@ -36,15 +60,12 @@
             >Contraseña</label
           >
         </div>
-        <p *ngIf="isLoginFail" class="text-center text-danger mt-4 fw-bold">
+        <p *ngIf="isRegisterFail" class="text-center text-danger mt-4 fw-bold">
           {{ errMensj }}
         </p>
         <div class="text-center my-5">
-          <button
-            class="mt-2 mx-2 enviar fuenteG fw-bold"
-            routerLink="/crearUser"
-          >
-            Registrarse
+          <button class="mt-2 mx-2 enviar fuenteG fw-bold" routerLink="/login">
+            Volver
           </button>
           <button class="mt-2 enviar fuenteG fw-bold" type="submit">
             Enviar

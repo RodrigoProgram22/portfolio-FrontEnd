@@ -47,13 +47,14 @@
         </li>
       </ul>
     </div>
-    <a routerLink="/login" routerLinkActive="active" *ngIf="btnIni">
-      <button class="mt-2 fuenteG button-primary" type="submit">
-        Iniciar Sesión
+    <a routerLink="/login" *ngIf="btnIni">
+      <button
+        class="mt-2 fuenteG button-primary"
+        type="submit"
+        (click)="onLogOut()"
+      >
+        Cerrar Sesión
       </button>
-    </a>
-    <a routerLink="/inicio" routerLinkActive="active" *ngIf="btnVolver">
-      <button class="mt-2 fuenteG button-primary" type="submit">Volver</button>
     </a>
   </div>
 </nav>

@@ -56,7 +56,7 @@ export class EditHabComponent implements OnInit {
       },
       (err) => {
         alert('Error al modificar habilidad.');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
   }
@@ -70,12 +70,15 @@ export class EditHabComponent implements OnInit {
       this.hab.logo_hab
     ).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al modificar habilidad');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

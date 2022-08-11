@@ -2,10 +2,7 @@
   --primary: #30c4c9;
   --secondary: #130e0e;
 }
-/* body {
-  background-color: var(--secondary);
-  color: white;
-} */
+
 a {
   text-decoration: none;
 }

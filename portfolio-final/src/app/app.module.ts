@@ -23,6 +23,9 @@ import { AddHabComponent } from './components/section/habilidades/add/add-hab/ad
 import { EditHabComponent } from './components/section/habilidades/edit/edit-hab/edit-hab.component';
 import { AddProyecComponent } from './components/section/proyectos/add/add-proyec/add-proyec.component';
 import { EditProyecComponent } from './components/section/proyectos/edit/edit-proyec/edit-proyec.component';
+import { interceptorProvider } from './interseptors/interceptor.service';
+import { RegistroComponent } from './components/login/registro/registro/registro.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +47,7 @@ import { EditProyecComponent } from './components/section/proyectos/edit/edit-pr
     EditHabComponent,
     AddProyecComponent,
     EditProyecComponent,
+    RegistroComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +57,7 @@ import { EditProyecComponent } from './components/section/proyectos/edit/edit-pr
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

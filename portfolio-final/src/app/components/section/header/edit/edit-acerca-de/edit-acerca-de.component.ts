@@ -64,7 +64,7 @@ export class EditAcercaDeComponent implements OnInit {
       },
       (err) => {
         alert('Error al modificar Acerca_de');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
   }
@@ -82,12 +82,15 @@ export class EditAcercaDeComponent implements OnInit {
       )
       .subscribe(
         (data) => {
-          this.router.navigate(['']);
+          this.router.navigate(['inicio']);
         },
         (err) => {
           alert('Error al modificar Acerca_de');
           this.router.navigate(['']);
         }
       );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

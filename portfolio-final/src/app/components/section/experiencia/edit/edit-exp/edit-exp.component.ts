@@ -79,7 +79,7 @@ export class EditExpComponent implements OnInit {
       },
       (err) => {
         alert('Error al modificar experiencia');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
   }
@@ -96,12 +96,15 @@ export class EditExpComponent implements OnInit {
       this.expe.descripcion
     ).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al modificar experiencia');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

@@ -14,7 +14,7 @@
           </a>
         </div>
         <div class="col col-md-6">
-          <div *ngIf="login" class="text-md-end text-center">
+          <div *ngIf="isAdmin" class="text-md-end text-center">
             <button
               type="button"
               class="btn btn-warning mx-1"
@@ -40,9 +40,9 @@
       </div>
       <hr class="mx-auto md-5" size="7" />
     </div>
-    <div *ngIf="login" class="text-center">
+    <div *ngIf="isAdmin" class="text-center">
       <button type="button" class="btn btn-success mx-1" routerLink="/addExpe">
-        <i class="bi bi-plus-circle"></i>
+        <i class="bi bi-plus-circle"></i> Añadir
       </button>
     </div>
   </div>

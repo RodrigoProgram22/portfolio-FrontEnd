@@ -77,12 +77,15 @@ export class AddEduComponent implements OnInit {
     );
     this.EduS.addEdu(nuevaEdu).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al agregar educacion');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

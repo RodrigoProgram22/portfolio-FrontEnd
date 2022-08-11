@@ -67,12 +67,15 @@ export class AddHabComponent implements OnInit {
     );
     this.HabS.addHab(nuevaHab).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al agregar habilidad.');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

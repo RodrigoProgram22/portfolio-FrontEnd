@@ -71,7 +71,7 @@ export class EditProyecComponent implements OnInit {
       },
       (err) => {
         alert('Error al modificar proyecto.');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
   }
@@ -86,12 +86,15 @@ export class EditProyecComponent implements OnInit {
       this.proyec.img_proyec
     ).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al modificar proyecto');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

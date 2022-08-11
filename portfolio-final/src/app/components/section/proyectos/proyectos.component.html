@@ -22,7 +22,7 @@
                   Ir
                 </button>
               </a>
-              <div *ngIf="login" class="text-center mt-1">
+              <div *ngIf="isAdmin" class="text-center mt-1">
                 <button
                   type="button"
                   class="btn btn-warning mx-1 text-light p-1"
@@ -43,13 +43,13 @@
         </div>
       </div>
     </div>
-    <div *ngIf="login" class="text-center align-self-center">
+    <div *ngIf="isAdmin" class="text-center align-self-center">
       <button
         type="button"
-        class="btn btn-success mx-1 p-2 rounded-circle"
+        class="btn btn-success mx-1 p-2"
         routerLink="/addProy"
       >
-        <i class="bi bi-plus-circle"></i>
+        <i class="bi bi-plus-circle"></i> Añadir
       </button>
     </div>
   </div>

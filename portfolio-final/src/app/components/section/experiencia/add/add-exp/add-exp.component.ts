@@ -85,12 +85,15 @@ export class AddExpComponent implements OnInit {
     );
     this.ExpeS.addExpe(nuevaExpe).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al agregar experiencia');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

@@ -71,7 +71,7 @@ export class EditEduComponent implements OnInit {
       },
       (err) => {
         alert('Error al modificar educacion');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
   }
@@ -86,12 +86,15 @@ export class EditEduComponent implements OnInit {
       this.edu.logo_inst
     ).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al modificar educacion');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

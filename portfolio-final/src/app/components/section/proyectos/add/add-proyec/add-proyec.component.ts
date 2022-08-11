@@ -78,12 +78,15 @@ export class AddProyecComponent implements OnInit {
     );
     this.ProyecS.addProyec(nuevoProyec).subscribe(
       (data) => {
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       },
       (err) => {
         alert('Error al agregar proyecto');
-        this.router.navigate(['']);
+        this.router.navigate(['inicio']);
       }
     );
+  }
+  volver() {
+    this.router.navigate(['inicio']);
   }
 }

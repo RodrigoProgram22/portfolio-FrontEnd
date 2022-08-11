@@ -6,31 +6,39 @@ import {
   NavigationEnd,
   NavigationError,
 } from '@angular/router';
+import { TokenService } from 'src/app/service/token.service';
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
+  isLogged: boolean = true;
   currentRoute: string = 'Demo';
-  constructor(private router: Router) {}
   btnIni: boolean = true;
-  btnVolver: boolean = false;
+  constructor(private router: Router, private tokenServi: TokenService) {}
   ngOnInit() {
+    if (this.tokenServi.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
         if ('/login' == event.url) {
           this.btnIni = false;
-          this.btnVolver = true;
         } else if ('/inicio' == event.url) {
           this.btnIni = true;
-          this.btnVolver = false;
         } else {
           this.btnIni = false;
-          this.btnVolver = true;
         }
       }
     });
+  }
+  onLogOut(): void {
+    this.tokenServi.logOut();
+    // window.location.reload();
   }
 }

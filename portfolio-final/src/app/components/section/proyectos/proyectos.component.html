@@ -12,6 +12,9 @@
                 <img src="{{ proyFor.img_proyec }}" />
               </a>
             </div>
+            <div class="text-center flecha">
+              <i class="bi bi-caret-down" style="font-size: 32px"></i>
+            </div>
             <div class="divTexto">
               <h4>{{ proyFor.titulo }}</h4>
               <p>Fecha : {{ proyFor.fecha }}</p>
@@ -43,14 +46,14 @@
         </div>
       </div>
     </div>
-    <div *ngIf="isAdmin" class="text-center align-self-center">
-      <button
-        type="button"
-        class="btn btn-success mx-1 p-2"
-        routerLink="/addProy"
-      >
-        <i class="bi bi-plus-circle"></i> Añadir
-      </button>
-    </div>
+  </div>
+  <div *ngIf="isAdmin" class="text-center align-self-center">
+    <button
+      type="button"
+      class="btn btn-success mx-1 p-2"
+      routerLink="/addProy"
+    >
+      <i class="bi bi-plus-circle"></i> Añadir
+    </button>
   </div>
 </section>

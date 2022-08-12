@@ -47,6 +47,10 @@
         </li>
       </ul>
     </div>
+    <label class="switch mx-3">
+      <input type="checkbox" (click)="toggleDarkTheme()" />
+      <span class="slider"></span>
+    </label>
     <a routerLink="/login" *ngIf="btnIni">
       <button
         class="mt-2 fuenteG button-primary"

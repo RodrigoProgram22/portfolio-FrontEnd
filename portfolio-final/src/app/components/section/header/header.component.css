@@ -9,6 +9,8 @@
 .container-title {
   background-color: var(--primary);
   color: var(--secondary);
+  border-radius: 12px;
+  box-shadow: 0 15px 20px #144c4e;
 }
 button {
   border-radius: 15%;

@@ -1,8 +1,18 @@
 :root {
   --primary: #30c4c9;
   --secondary: #130e0e;
+  --bg-celeste: rgb(214, 245, 234);
 }
-
+body {
+  color: var(--secondary);
+  background-color: var(--bg-celeste);
+  transition: 0.1s;
+}
+body.dark-theme {
+  color: white;
+  background-color: var(--secondary);
+  transition: 0.1s;
+}
 a {
   text-decoration: none;
 }
@@ -23,6 +33,7 @@ h2 {
   width: 190px;
   border-radius: 9px;
   background-color: var(--primary);
+  box-shadow: 0 15px 20px #144c4e;
   color: var(--secondary);
 }
 .button-primary {

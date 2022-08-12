@@ -41,4 +41,7 @@ export class NavComponent implements OnInit {
     this.tokenServi.logOut();
     // window.location.reload();
   }
+  toggleDarkTheme(): void {
+    document.body.classList.toggle('dark-theme');
+  }
 }

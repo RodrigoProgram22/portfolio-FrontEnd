@@ -51,7 +51,7 @@ export class EditAcercaDeComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(5),
-          Validators.maxLength(150),
+          Validators.maxLength(250),
         ],
       ],
     });

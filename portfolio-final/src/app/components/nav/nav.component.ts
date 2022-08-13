@@ -27,12 +27,10 @@ export class NavComponent implements OnInit {
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
-        if ('/login' == event.url) {
+        if ('/login' == event.url || '/crearUser' == event.url) {
           this.btnIni = false;
-        } else if ('/inicio' == event.url) {
-          this.btnIni = true;
         } else {
-          this.btnIni = false;
+          this.btnIni = true;
         }
       }
     });

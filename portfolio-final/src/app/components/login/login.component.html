@@ -1,56 +1,66 @@
 <section class="container mx-auto my-4 animacion fadeIn">
-  <div class="col align-self-center px-5 mx-auto">
-    <div class="container-fluid bg-primario p-2">
-      <h1 class="text-center my-4 fw-bold text-dark fuenteG">Iniciar Sesión</h1>
-      <form
-        class="container mx-auto my-2"
-        #f="ngForm"
-        (ngSubmit)="onLogin()"
-        novalidate
-      >
-        <div class="form__group field mx-auto mb-4">
-          <input
-            placeholder="Name"
-            class="form__field"
-            id="nombreUsuario"
-            name="nombreUsuario"
-            type="text"
-            [(ngModel)]="nombreUsuario"
-            required
-          />
-          <label class="form__label fuenteG fw-bold" for="name"
-            >Nombre de usuario</label
-          >
-        </div>
-        <div class="form__group field mx-auto">
-          <input
-            placeholder="Name"
-            class="form__field"
-            type="password"
-            id="password"
-            name="password"
-            [(ngModel)]="password"
-            required
-          />
-          <label class="form__label fuenteG fw-bold" for="password"
-            >Contraseña</label
-          >
-        </div>
-        <p *ngIf="isLoginFail" class="text-center text-danger mt-4 fw-bold">
-          {{ errMensj }}
-        </p>
-        <div class="text-center my-5">
-          <button
-            class="mt-2 mx-2 enviar fuenteG fw-bold"
-            routerLink="/crearUser"
-          >
-            Registrarse
-          </button>
-          <button class="mt-2 enviar fuenteG fw-bold" type="submit">
-            Enviar
-          </button>
-        </div>
-      </form>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col align-self-center px-5 mx-auto">
+      <div class="container-fluid bg-primario p-2">
+        <h1 class="text-center my-4 fw-bold text-dark fuenteG">
+          Iniciar Sesión
+        </h1>
+        <form
+          class="container mx-auto my-2"
+          #f="ngForm"
+          (ngSubmit)="onLogin()"
+          novalidate
+        >
+          <div class="form__group field mx-auto mb-4">
+            <input
+              placeholder="Name"
+              class="form__field"
+              id="nombreUsuario"
+              name="nombreUsuario"
+              type="text"
+              [(ngModel)]="nombreUsuario"
+              required
+            />
+            <label class="form__label fuenteG fw-bold" for="name"
+              >Nombre de usuario</label
+            >
+          </div>
+          <div class="form__group field mx-auto">
+            <input
+              placeholder="Name"
+              class="form__field"
+              type="password"
+              id="password"
+              name="password"
+              [(ngModel)]="password"
+              required
+            />
+            <label class="form__label fuenteG fw-bold" for="password"
+              >Contraseña</label
+            >
+          </div>
+          <p *ngIf="isLoginFail" class="text-center text-danger mt-4 fw-bold">
+            {{ errMensj }}
+          </p>
+          <div class="text-center my-5">
+            <!-- <button
+              class="mt-2 mx-2 enviar fuenteG fw-bold"
+              routerLink="/crearUser"
+            >
+              Registrarse 
+            </button> -->
+            <button class="mt-2 enviar fuenteG fw-bold" type="submit">
+              Enviar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col align-self-center">
+      <img
+        src="https://i.ibb.co/GFCqcn4/programing1-unscreen.gif"
+        class="img-fluid"
+      />
     </div>
   </div>
 </section>

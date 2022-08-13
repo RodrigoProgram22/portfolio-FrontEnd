@@ -71,13 +71,15 @@
               </label>
             </div>
           </div>
+          <div class="text-center mt-3">
+            <p *ngIf="form.invalid" class="text-danger fw-bold">
+              Rellena los campos correctamente
+            </p>
+          </div>
           <div class="text-center mt-5">
             <button class="mt-2 mx-2 enviar fuenteG fw-bold" (click)="volver()">
               Cancelar
             </button>
-            <p *ngIf="form.invalid" class="text-danger fw-bold">
-              Rellena los campos correctamente
-            </p>
             <button
               class="mt-2 enviar fuenteG fw-bold"
               [disabled]="form.invalid"

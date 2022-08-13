@@ -22,7 +22,7 @@ const routes: Routes = [
     data: { expectedRol: ['admin', 'user'] },
   },
   { path: 'login', component: LoginComponent },
-  { path: 'crearUser', component: RegistroComponent },
+  // { path: 'crearUser', component: RegistroComponent },
   {
     path: 'editAcerca_de/:id',
     component: EditAcercaDeComponent,

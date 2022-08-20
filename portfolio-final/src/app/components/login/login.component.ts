@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   nombreUsuario!: string;
   password: string;
   roles: string[] = [];
-  errMensj!: string;
+  errMensj: string;
 
   constructor(
     private tokenService: TokenService,
@@ -46,6 +46,9 @@ export class LoginComponent implements OnInit {
         this.isLogged = false;
         this.isLoginFail = true;
         this.errMensj = err.error.mensaje;
+        if (this.errMensj === undefined) {
+          this.errMensj = 'Usuario o Contraseña Incorrectos.';
+        }
       }
     );
   }

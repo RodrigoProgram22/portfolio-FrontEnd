@@ -7,7 +7,8 @@ import { Habilidad } from '../model/HabilidadM';
   providedIn: 'root',
 })
 export class HabilidadService {
-  URL = 'http://localhost:8080/habilidades/';
+  //URL = 'https://back-portfolioap.herokuapp.com/habilidades/';
+  private URL = 'http://localhost:8080/habilidades/';
 
   constructor(private http: HttpClient) {}
   public mostrarHab(): Observable<Habilidad[]> {

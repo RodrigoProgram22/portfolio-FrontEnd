@@ -24,12 +24,12 @@
             />
           </a>
         </li>
-        <li class="nav-item my-auto">
+        <li class="nav-item my-auto mx-2">
           <a href="https://github.com/RodrigoProgram22" target="_blank">
             <i class="bi bi-github text-light"></i>
           </a>
         </li>
-        <li class="nav-item my-auto mx-3">
+        <li class="nav-item my-auto mx-2">
           <a
             href="https://www.linkedin.com/in/rodrigo-romano22/"
             target="_blank"
@@ -37,12 +37,12 @@
             <i class="bi bi-linkedin text-light"></i>
           </a>
         </li>
-        <li class="nav-item my-auto">
+        <li class="nav-item my-auto mx-2">
           <a
             href="https://www.argentina.gob.ar/produccion/argentina-programa/segunda-etapa"
-            target="_blank"
+            target="_blank "
           >
-            <p class="text-light fw-bold">#YoProgramo</p>
+            <p class="text-light fw-bold m-0">#YoProgramo</p>
           </a>
         </li>
       </ul>
@@ -52,6 +52,11 @@
       <span class="slider"></span>
     </label>
     <a routerLink="/login" *ngIf="btnIni">
+      <button class="mt-2 fuenteG button-primary" type="submit">
+        Iniciar Sesión
+      </button>
+    </a>
+    <a *ngIf="isLogged">
       <button
         class="mt-2 fuenteG button-primary"
         type="submit"

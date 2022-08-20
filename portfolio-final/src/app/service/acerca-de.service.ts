@@ -7,6 +7,7 @@ import { Acerca_de } from '../model/Acerca_deM';
   providedIn: 'root',
 })
 export class AcercaDeService {
+  //private URL = 'https://back-portfolioap.herokuapp.com/Acerca_de/';
   private URL = 'http://localhost:8080/Acerca_de/';
   constructor(private http: HttpClient) {}
 

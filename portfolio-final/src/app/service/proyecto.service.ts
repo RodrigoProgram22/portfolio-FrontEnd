@@ -7,7 +7,9 @@ import { ProyectoM } from '../model/ProyectoM';
   providedIn: 'root',
 })
 export class ProyectoService {
-  URL = 'http://localhost:8080/proyectos/';
+  //URL = 'https://back-portfolioap.herokuapp.com/proyectos/';
+  private URL = 'http://localhost:8080/proyectos/';
+
   constructor(private http: HttpClient) {}
   public mostrarProyec(): Observable<ProyectoM[]> {
     return this.http.get<ProyectoM[]>(this.URL + 'mostrar');

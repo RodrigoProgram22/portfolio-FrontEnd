@@ -13,23 +13,22 @@ import { TokenService } from 'src/app/service/token.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  isLogged: boolean = true;
+  isLogged: boolean = false;
   currentRoute: string = 'Demo';
-  btnIni: boolean = true;
   constructor(private router: Router, private tokenServi: TokenService) {}
+  btnIni: boolean = true;
   ngOnInit() {
-    if (this.tokenServi.getToken()) {
-      this.isLogged = true;
-    } else {
-      this.isLogged = false;
-    }
-
     this.router.events.subscribe((event: Event) => {
+      if (this.tokenServi.getToken()) {
+        this.isLogged = true;
+      } else {
+        this.isLogged = false;
+      }
       if (event instanceof NavigationEnd) {
         this.currentRoute = event.url;
-        if ('/login' == event.url || '/crearUser' == event.url) {
+        if ('/login' == event.url || this.isLogged) {
           this.btnIni = false;
-        } else {
+        } else if ('/inicio' === event.url && !this.isLogged) {
           this.btnIni = true;
         }
       }
@@ -37,7 +36,7 @@ export class NavComponent implements OnInit {
   }
   onLogOut(): void {
     this.tokenServi.logOut();
-    // window.location.reload();
+    window.location.reload();
   }
   toggleDarkTheme(): void {
     document.body.classList.toggle('dark-theme');

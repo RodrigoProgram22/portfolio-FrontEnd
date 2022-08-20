@@ -14,12 +14,10 @@ import { AddProyecComponent } from './components/section/proyectos/add/add-proye
 import { EditProyecComponent } from './components/section/proyectos/edit/edit-proyec/edit-proyec.component';
 import { GuardService as guard } from './guards/guard.service';
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'inicio', pathMatch: 'full' },
   {
     path: 'inicio',
     component: HomeComponent,
-    canActivate: [guard],
-    data: { expectedRol: ['admin', 'user'] },
   },
   { path: 'login', component: LoginComponent },
   // { path: 'crearUser', component: RegistroComponent },

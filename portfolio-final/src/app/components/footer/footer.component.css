@@ -3,7 +3,7 @@
   object-fit: contain;
 }
 .redS {
-  width: 320px;
+  max-width: 320px;
 }
 .text-primario {
   color: var(--primary);

@@ -39,6 +39,9 @@
               >Contraseña</label
             >
           </div>
+          <div class="container my-3 text-center" *ngIf="loader">
+            <div class="line-wobble mx-auto"></div>
+          </div>
           <p *ngIf="isLoginFail" class="text-center text-danger mt-3 fw-bold">
             {{ errMensj }}
           </p>

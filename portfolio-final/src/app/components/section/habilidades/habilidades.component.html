@@ -51,6 +51,9 @@
       </div>
     </div>
   </div>
+  <div class="container my-3" *ngIf="hab.length === 0">
+    <h5 class="fw-bold text-center">No tienes ninguna habilidad agregada.</h5>
+  </div>
   <div *ngIf="isAdmin" class="text-center mt-3 align-self-center">
     <button type="button" class="btn btn-success mx-1 p-2" routerLink="/addHab">
       <i class="bi bi-plus-circle"></i> Añadir

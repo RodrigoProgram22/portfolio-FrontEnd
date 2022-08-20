@@ -3,7 +3,7 @@
 ### **Descripción:**
 
 Este es el repositorio FrontEnd de mi portfolio, proyecto integrador final para el curso de [Argentina Programa](https://www.argentina.gob.ar/produccion/transformacion-digital-y-economia-del-conocimiento/argentina-programa "Argentina Programa") 2da Etapa.
-Este repositorio representa lo que puede ver el usuario al entrar a la aplicación.
+Este repositorio representa lo que puede ver el usuario al entrar a la aplicación web.
 Si quieres ver el BackEnd puedes hacer click [Aquí](https://github.com/RodrigoProgram22/portfolio-BackEnd.git "Aquí").
 
 ---
@@ -21,24 +21,23 @@ Si quieres ver el BackEnd puedes hacer click [Aquí](https://github.com/RodrigoP
 ### **Uso:**
 
 La principal idea de esta aplicacion es traer datos de una API Rest creada con el [BackEnd](https://github.com/RodrigoProgram22/portfolio-BackEnd.git "BackEnd"), para luego mostrarlos al usuario.
-También cuenta con un Inicio de Sesion, el cual al iniciarse debe permitirle al usuario solo ver, o si te registras como **Admin** podrás añadir, modificar y eliminar algunos datos.
-Estas son las dos cuentas con las que puedes ingresar :
+También cuenta con un Inicio de Sesion, el cual al iniciarse debe permitirle al usuario poder añadir, modificar y eliminar algunos datos.
 
-**Nombre de Usuario : ** admin
-**Contraseña** : admin
+- Este es usuario del Administrador para tener los permisos de admin:
 
-**Nombre de Usuario** : rodrigouser
-**Contraseña** : rodrigouser
+- **Nombre de Usuario** : admin
+  **Contraseña** : admin
 
-1. Lo primero que debes hacer es registrarte, ya sea como Administrador o como usuario normal. Si se registra como Administrador podrás **modificar**, **eliminar** y **añadir** datos a cada seccion.
-2. Luego ya podrás ver todo el contenido de mi portfolio, se encuentra dividido por algunas secciones **Educación**, **Experiencia Laboral**, **Proyectos** y **Habilidades**.
-3. Cuado ingreses como Adminstrador en cada seccion se habilitará unos botones de **editar** y **añadir**, que al darle click te redirigirá a otra ruta y podras ingresar los nuevos datos en el formulario que se muestre. También habrá un boton rojo para **eliminar** que al darle click se eliminaran esos datos.
+1. Lo primero que veras al entrar a la aplicacion web es un portfolio normal. Con mis datos cargados desde una BBDD externa.
+2. En la barra de navegación se encuentra un boton de Inicio de Sesión, cuando le des click te enviara al login.
+3. Debes registrarte como Adminstrador, y en cada seccion se habilitará unos botones de **editar** y **añadir**, que al darle click te redirigirá a otra ruta y podras ingresar los nuevos datos en el formulario que se muestre. También habrá un boton rojo para **eliminar** que al darle click se eliminaran esos datos.
 4. Para añadir una imagen debes "Copiar la dirección de enlace" de una imagen de internet, y pegarlo en el campo "IMAGEN URL" del formulario que tenga ese campo.
 
 ---
 
 ### **Visuales:**
 
+- Puedes ver la aplicación web finalizada [Aqui](https://front-portfolioap.web.app/ "Aqui")
 - Puedes visualizar la maqueta web haciendo click [Aquí](https://maquetaportfolio.netlify.app/ "Aquí")
 
 ---
@@ -46,3 +45,4 @@ Estas son las dos cuentas con las que puedes ingresar :
 **Estado Del Proyecto:**
 
 El proyecto esta finalizado. Se termino el 13 de Agosto de 2022.
+Ultima Actualización 20 de Agosto dee 2022.

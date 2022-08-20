@@ -13,7 +13,6 @@ export class ExperienciaComponent implements OnInit {
   authority: string;
   isAdmin = false;
   public expers: Array<Experiencia> = [];
-
   constructor(
     private ExpeS: ExperienciaService,
     private tokenS: TokenService

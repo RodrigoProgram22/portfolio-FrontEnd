@@ -38,6 +38,9 @@
       </div>
       <hr class="mx-auto md-5" size="7" />
     </div>
+    <div class="container my-3" *ngIf="edu.length === 0">
+      <h5 class="fw-bold text-center">No tienes ninguna educación agregada.</h5>
+    </div>
     <div *ngIf="isAdmin" class="text-center">
       <button
         type="button"

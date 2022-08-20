@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   password: string;
   roles: string[] = [];
   errMensj: string;
-
+  loader: boolean = false;
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
     }
   }
   onLogin(): void {
+    this.loader = true;
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
       (data) => {
@@ -41,6 +42,7 @@ export class LoginComponent implements OnInit {
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
         this.router.navigate(['inicio']);
+        this.loader = false;
       },
       (err) => {
         this.isLogged = false;
@@ -49,6 +51,7 @@ export class LoginComponent implements OnInit {
         if (this.errMensj === undefined) {
           this.errMensj = 'Usuario o Contraseña Incorrectos.';
         }
+        this.loader = false;
       }
     );
   }

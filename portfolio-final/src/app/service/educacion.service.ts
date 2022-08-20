@@ -7,7 +7,7 @@ import { Educacion } from '../model/EducacionM';
   providedIn: 'root',
 })
 export class EducacionService {
-  //URL = 'https://back-portfolioap.herokuapp.com/educacion/';
+  // URL = 'https://back-portfolioap.herokuapp.com/educacion/';
   private URL = 'http://localhost:8080/educacion/';
   constructor(private http: HttpClient) {}
   public mostrarEdu(): Observable<Educacion[]> {

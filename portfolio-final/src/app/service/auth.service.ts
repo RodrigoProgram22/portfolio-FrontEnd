@@ -9,7 +9,7 @@ import { NuevoUsuario } from '../model/nuevo-usuario';
   providedIn: 'root',
 })
 export class AuthService {
-  //authURL = 'https://back-portfolioap.herokuapp.com/auth/';
+  // authURL = 'https://back-portfolioap.herokuapp.com/auth/';
   authURL = 'http://localhost:8080/auth/';
   constructor(private http: HttpClient) {}
   public nuevo(nuevoUsuario: NuevoUsuario): Observable<any> {

@@ -45,6 +45,9 @@
       </div>
     </div>
   </div>
+  <div class="container my-3" *ngIf="proyec.length === 0">
+    <h5 class="fw-bold text-center">No tienes ningún proyecto agregado.</h5>
+  </div>
   <div *ngIf="isAdmin" class="text-center align-self-center">
     <button
       type="button"

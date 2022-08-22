@@ -25,7 +25,7 @@ export class EditEduComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(50),
         ],
       ],
@@ -33,7 +33,7 @@ export class EditEduComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(50),
         ],
       ],
@@ -41,7 +41,7 @@ export class EditEduComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(50),
         ],
       ],
@@ -49,7 +49,7 @@ export class EditEduComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(250),
         ],
       ],
@@ -57,7 +57,7 @@ export class EditEduComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(3),
+          Validators.minLength(1),
           Validators.maxLength(250),
         ],
       ],

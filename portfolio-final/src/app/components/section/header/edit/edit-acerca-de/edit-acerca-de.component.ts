@@ -25,7 +25,7 @@ export class EditAcercaDeComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
+          Validators.minLength(1),
           Validators.maxLength(50),
         ],
       ],
@@ -33,7 +33,7 @@ export class EditAcercaDeComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
+          Validators.minLength(1),
           Validators.maxLength(50),
         ],
       ],
@@ -42,7 +42,7 @@ export class EditAcercaDeComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
+          Validators.minLength(1),
           Validators.maxLength(250),
         ],
       ],
@@ -50,7 +50,7 @@ export class EditAcercaDeComponent implements OnInit {
         '',
         [
           Validators.required,
-          Validators.minLength(5),
+          Validators.minLength(1),
           Validators.maxLength(250),
         ],
       ],

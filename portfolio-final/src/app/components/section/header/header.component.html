@@ -1,11 +1,14 @@
-<header class="container my-5 animacion fadeIn" id="inicio">
+<header class="container my-5 animacion fadeIn">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="col text-md-end text-center align-self-center">
+    <div
+      class="col text-md-end text-center align-self-center"
+      *ngIf="acerca_de"
+    >
       <div class="position-relative">
         <img src="{{ acerca_de.img_perfil }}" class="img-rodri img-fluid" />
       </div>
     </div>
-    <div class="col align-self-center">
+    <div class="col align-self-center" *ngIf="acerca_de">
       <div class="position-relative">
         <div class="container-title titulo text-center p-3 fuenteG fw-bold">
           <h1>{{ acerca_de.nombre_apellido }}</h1>

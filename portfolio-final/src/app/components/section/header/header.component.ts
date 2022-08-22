@@ -13,8 +13,7 @@ export class HeaderComponent implements OnInit {
   authority: string;
   isAdmin = false;
   constructor(public acerServ: AcercaDeService, private tokenS: TokenService) {}
-  acerca_de: Acerca_de = new Acerca_de('', '', '', '', '');
-
+  acerca_de: Acerca_de = null;
   ngOnInit(): void {
     this.acerServ.buscarAcercaDe(1).subscribe((data) => {
       this.acerca_de = data;

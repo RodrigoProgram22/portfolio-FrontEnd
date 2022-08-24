@@ -26,7 +26,7 @@ También cuenta con un Inicio de Sesion, el cual al iniciarse debe permitirle al
 - Este es usuario del Administrador para tener los permisos de admin:
 
 - **Nombre de Usuario** : rodrigoAdmin
-  **Contraseña** : R0drigoAdmin22
+  **Contraseña** : R0drigoAdmin22***
 
 1. Lo primero que veras al entrar a la aplicacion web es un portfolio normal. Con mis datos cargados desde una BBDD externa.
 2. En la barra de navegación se encuentra un boton de Inicio de Sesión, cuando le des click te enviara al login.
